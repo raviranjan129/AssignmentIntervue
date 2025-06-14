@@ -1,9 +1,11 @@
 const mongoose = require("mongoose");
-const { DEV_DB_URL, NODE_ENV, PROD_DB_URL } = require("./serverConfig");
+const { NODE_ENV, DEV_DB_URL, PROD_DB_URL } = require("./serverconfig");
+
+
 
 async function connectDB() {
   try {
-    if (NODE_ENV === "development") {
+    if (NODE_ENV=== "development") {
       await mongoose.connect(DEV_DB_URL);
     } else if (NODE_ENV === "production") {
       await mongoose.connect(PROD_DB_URL);
