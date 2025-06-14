@@ -13,7 +13,11 @@ const {
 const connectDB = require("./config/dbConfig");
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: "https://assignmentintervue-frontend.onrender.com",
+  credentials: true
+}));
+
 app.use(express.json());
 
 const port = process.env.PORT || 3000;
